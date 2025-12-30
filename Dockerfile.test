@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY pipeline/requirements.txt /app/pipeline/requirements.txt
+COPY dev-requirements.txt /app/dev-requirements.txt
+RUN pip install --no-cache-dir -r /app/pipeline/requirements.txt -r /app/dev-requirements.txt
+COPY pipeline /app/pipeline
+COPY tests /app/tests
+ENV PYTHONPATH=/app
+CMD ["pytest","-q","--maxfail=1","--disable-warnings","--cov=pipeline","--cov-report=term-missing"]

@@ -1,0 +1,7 @@
+{
+  "app": "python app.py",
+  "context": {
+    "project": "wsl-mlops",
+    "region": "eu-west-2"
+  }
+}
