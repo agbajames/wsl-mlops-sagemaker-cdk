@@ -19,8 +19,8 @@ class OidcStack(Stack):
             client_ids=["sts.amazonaws.com"],
         )
 
-        # TODO: Update to your repo:
-        repo_subject = "repo:YOUR_GITHUB_ORG/YOUR_REPO:ref:refs/heads/main"
+        # Github repo:
+        repo_subject = "repo:agbajames/wsl-mlops-sagemaker-cdk:ref:refs/heads/main"
 
         self.role = iam.Role(
             self,

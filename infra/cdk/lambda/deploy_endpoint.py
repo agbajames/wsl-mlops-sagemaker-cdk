@@ -25,7 +25,7 @@ def handler(event: Dict[str, Any], _context: Any) -> Dict[str, Any]:
     """
     model_package_arn = event["model_package_arn"]
     endpoint_name = event.get("endpoint_name", "wsl-elo-endpoint")
-    instance_type = event.get("instance_type", "ml.t3.medium")
+    instance_type = event.get("instance_type", "ml.m5.large")
 
     role_arn = os.environ["SAGEMAKER_ROLE_ARN"]
     subnet_ids = _split_csv_env("VPC_SUBNET_IDS")
